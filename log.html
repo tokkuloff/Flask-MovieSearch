@@ -1,0 +1,26 @@
+{% extends 'BasicLayouts.html' %}
+
+{% block title %}
+{% endblock %}
+    {% block content %}
+    <div class="container">
+
+	<form action="{{ url_for('login') }}" method="post">
+	    {% if mesage is defined and mesage %}
+			<div class="alert alert-warning">{{ mesage }}</div>
+		{% endif %}
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" name="email" required>
+		</div>
+		<div class="form-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control" id="password" name="password" placeholder="Enter password" name="pswd" required>
+		</div>
+		<button type="submit" class="btn btn-primary">Log in</button>
+		<p class="bottom">Do not have account yet?<a class="bottom" href="{{url_for('register')}}">Click here</a></p>
+	</form>
+</div>
+
+    {% endblock %}
+

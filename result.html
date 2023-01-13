@@ -1,0 +1,43 @@
+{% extends 'BasicLayouts.html' %}
+{% block title %}
+Res
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="card text-dark" style="width: 25rem">
+    <img class="card-img-top" src={{ m.poster }} alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ m.title }}</h5>
+        <p class="card-text">{{ m.plot }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ m.year }}</li>
+        <li class="list-group-item">{{ m.released }}</li>
+        <li class="list-group-item">{{ m.genre }}</li>
+        <li class="list-group-item">{{ m.genre }}</li>
+        <li class="list-group-item">{{ m.director }}</li>
+        <li class="list-group-item">{{ m.imdb }}</li>
+        <li class="list-group-item">{{ m.imdbR }}</li>
+        <li class="list-group-item">{{ m.country }}</li>
+        <li class="list-group-item">{{ m.awards }}</li>
+    </ul>
+    <div class="card-body">
+        <a class="card-link" href="{{url_for('edit', film_id=m.id)}}">
+            <button type="button" class="btn btn-secondary">Edit</button>
+        </a>
+        <a class="card-link" href="{{url_for('delete_film', film_id=m.id)}}">
+            <button type="button" class="btn btn-danger">Delete</button>
+        </a>
+        <a class="card-link" href="{{ url_for('home_page') }}">
+            <button type="button" class="btn btn-primary">Home</button>
+        </a>
+<!--        <a href="#" class="card-link">Another link</a>-->
+    </div>
+</div>
+</div>
+
+
+
+{% endblock %}

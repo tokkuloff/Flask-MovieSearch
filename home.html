@@ -1,0 +1,147 @@
+{% extends 'BasicLayouts.html' %}
+{% block title %}
+    Home Page
+{% endblock %}
+{% block content %}
+<style>
+    h2{
+        text-align: center;
+    }
+
+    form{
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+
+    .carousel-item{
+        height:32rem;
+        background: #000;
+        color:white;
+        position:relative;
+        background-position:center;
+        background-size:cover;
+
+      }
+      .container{
+        position: absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        padding-bottom:50px;
+      }
+      .overlay-image{
+        position:absolute;
+        bottom: 0;
+        left:0;
+        right:0;
+        top:0;
+        background-position:center;
+        background-size:cover;
+        opacity:0.5%;
+      }
+      .mt-5{
+          margin-top: 0 !important;
+      }
+
+</style>
+<div id="myCarousel" class="carousel slide carousel-fade "
+         data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel"
+        data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel"
+        data-slide-to="1"></li>
+      </ol>
+    <div class="carousel-inner mt-5">
+      <div class="carousel-item active"
+         style="background-image:url(https://ntvb.tmsimg.com/assets/p8696131_b_h10_aa.jpg?w=1280&h=720);">
+          <div class="overlay-image"></div>
+      <div class = "container">
+         <h1>Breaking Bad</h1>
+         <p>A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family's future.</p>
+
+      </div>
+      </div>
+    <div class="carousel-item"
+    style="background-image:url(https://prod-ripcut-delivery.disney-plus.net/v1/variant/star/51E95FB332777ADD0B1AA8FC5E337BFC40E1B4BAAFB077F7245E500D58FABF5F/scale?width=1200&aspectRatio=1.78&format=jpeg);">
+          <div class="overlay-image"></div>
+      <div class = "container">
+         <h1>Whiplash</h1>
+         <p>A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential.</p>
+
+      </div>
+    </div>
+    </div>
+     <a href="#myCarousel"
+        class="carousel-control-prev"role="button"
+     data-slide="prev">
+         <span class="sr-only">previous</span>
+         <span class ="carousel-control-prev-icon"
+         aria-hidden="true"></span>
+     </a>
+     <a href="#myCarousel"
+        class="carousel-control-next" role="button"
+     data-slide="next">
+         <span class="sr-only">next</span>
+         <span class ="carousel-control-next-icon"
+         aria-hidden="true"></span>
+     </a>
+    </div>
+<div class="top-block-head text-uppercase">
+    <h2 class="display-4">Top
+        <span class="text-theme"><FONT COLOR=orange>Hot</span>
+    </h2>
+</div>
+
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+        <th scope="col">Title</th>
+      <th scope="col">Year</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Country</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr onclick="window.location='http://127.0.0.1:5000/result?url1=breaking+bad';">
+      <th scope="row">1</th>
+      <td >Breaking Bad</td>
+      <td>2008-2013</td>
+      <td>Crime, Drama, Thriller</td>
+      <td><FONT COLOR=orange>9.5/10</td>
+      <td>United States</td>
+    </tr>
+     <tr onclick="window.location='http://127.0.0.1:5000/result?url1=better+call+saul';">
+      <th scope="row" >2</th>
+      <td >Better Call Saul</td>
+      <td>2015-2022</td>
+      <td>Crime, Drama</td>
+      <td><FONT COLOR=orange>8.9/10</td>
+      <td>United States</td>
+    </tr>
+    <tr onclick="window.location='http://127.0.0.1:5000/result?url1=knives+out';">
+      <th scope="row" >3</th>
+      <td >Knives Out</td>
+      <td>2019</td>
+      <td>Comedy, Crime, Drama</td>
+      <td><FONT COLOR=orange>7.9/10</td>
+      <td>United States</td>
+    </tr>
+  </tbody>
+</table>
+<div class="top-block-head text-uppercase">
+    <p class="display-4"><FONT COLOR=white>enter your
+        <span class="text-theme">movie</span>
+    </p>
+</div>
+<form action="/result" class="container1">
+        <input type="text" name="url1">
+        <button type="submit">Search</button>
+    </form>
+
+{% endblock %}
